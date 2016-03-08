@@ -27,7 +27,7 @@ Todo: Symfony, Silex
  {{ money|money_i18n_format('de_DE') }} 1.123,45 €
  {{ money|money_i18n_format('en_US') }} €1,123.45
  {{ money|money_currency_symbol('en_US') }} €
- {{ money|money_currency_symbol('en_US') }} Euro
+ {{ money|money_currency_name('en_US') }} Euro
 ```
 
 ## Change log
