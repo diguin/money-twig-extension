@@ -1,0 +1,45 @@
+{
+    "name": "ivoba/money-twig-extension",
+    "description": "Twig extension for sebastian/money",
+    "keywords": [
+        "twig",
+        "money"
+    ],
+    "homepage": "https://www.github.com/ivoba/money-twig-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivo Bathke",
+            "email": "ivo.bathke@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=5.4",
+        "sebastian/money" : "~1.6",
+        "twig/twig": "~1.20|~2.0",
+        "symfony/intl": ">=2.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ivoba\\Money\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ivoba\\Money\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
