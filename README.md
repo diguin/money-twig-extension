@@ -1,6 +1,6 @@
 # money-twig-extension
 
-Twig Extension for [Money][https://github.com/sebastianbergmann/money] value object
+Twig Extension for [Money](https://github.com/sebastianbergmann/money) value object
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -27,6 +27,7 @@ Todo: Symfony, Silex
  {{ money|money_i18n_format('de_DE') }} 1.123,45 €
  {{ money|money_i18n_format('en_US') }} €1,123.45
  {{ money|money_currency_symbol('en_US') }} €
+ {{ money|money_currency_symbol('en_US') }} Euro
 ```
 
 ## Change log
@@ -66,8 +67,3 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-downloads]: https://packagist.org/packages/ivoba/money-twig-extension
 [link-author]: https://github.com/ivoba
 [link-contributors]: ../../contributors
-
-
-## Todo 
-
-money_currency_name
