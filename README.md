@@ -20,12 +20,21 @@ $ composer require ivoba/money-twig-extension
 ## Usage
 Register the Twig Extension according to the framework you are using.
 
-Todo: Symfony, Silex
+Symfony Example:  
+
+```xml
+<service id="ivoba_money_twig_extension" class="Ivoba\Money\Twig\MoneyExtension">
+  <tag name="twig.extension" />
+</service>
+```
+
+In your templates use like so:  
 
 ```
  {{ money.convertedAmount }} 213.23
  {{ money|money_i18n_format('de_DE') }} 1.123,45 €
  {{ money|money_i18n_format('en_US') }} €1,123.45
+ {{ money|money_i18n_decimal('en_US') }} 1,123.45
  {{ money|money_currency_symbol('en_US') }} €
  {{ money|money_currency_name('en_US') }} Euro
 ```
