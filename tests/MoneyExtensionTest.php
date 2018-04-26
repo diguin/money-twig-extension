@@ -6,7 +6,7 @@
  * Time: 16:25
  */
 
-namespace Ivoba\Money\Test\Twig\MoneyExtension;
+namespace Ivoba\Money\Test\Twig;
 
 
 class MoneyExtensionTest extends \PHPUnit_Framework_TestCase

@@ -2,7 +2,9 @@
 
 namespace Ivoba\Money\Formatter;
 
-use SebastianBergmann\Money\Money;
+use Money\Currencies\ISOCurrencies;
+use Money\Formatter\IntlMoneyFormatter;
+use Money\Money;
 use Symfony\Component\Intl\Intl;
 
 class MoneyFormatter
@@ -18,7 +20,7 @@ class MoneyFormatter
     public function __construct($locale = null)
     {
         $this->locale = $locale;
-        if (is_null($this->locale)) {
+        if ($this->locale === null) {
             $this->locale = \Locale::getDefault();
         }
     }
@@ -37,12 +39,11 @@ class MoneyFormatter
         if ($locale === null) {
             $locale = $this->locale;
         }
-        $formatter = new \NumberFormatter(
-            $locale,
-            \NumberFormatter::DECIMAL
-        );
 
-        return $formatter->format($money->getConvertedAmount());
+        $numberFormatter = new \NumberFormatter($locale, \NumberFormatter::DECIMAL);
+        $moneyFormatter = new IntlMoneyFormatter($numberFormatter, new ISOCurrencies());
+
+        return $moneyFormatter->format($money);
     }
 
     /**
@@ -60,15 +61,10 @@ class MoneyFormatter
             $locale = $this->locale;
         }
 
-        $formatter = new \NumberFormatter(
-            $locale,
-            \NumberFormatter::CURRENCY
-        );
+        $numberFormatter = new \NumberFormatter($locale, \NumberFormatter::CURRENCY);
+        $moneyFormatter = new IntlMoneyFormatter($numberFormatter, new ISOCurrencies());
 
-        return $formatter->formatCurrency(
-            $money->getConvertedAmount(),
-            $money->getCurrency()->getCurrencyCode()
-        );
+        return $moneyFormatter->format($money);
     }
 
     /**
@@ -79,7 +75,7 @@ class MoneyFormatter
      */
     public function formatCurrencyAsSymbol(Money $money)
     {
-        return Intl::getCurrencyBundle()->getCurrencySymbol($money->getCurrency()->getCurrencyCode());
+        return Intl::getCurrencyBundle()->getCurrencySymbol($money->getCurrency()->getCode());
     }
 
     /**
@@ -90,6 +86,6 @@ class MoneyFormatter
      */
     public function formatCurrencyAsName(Money $money)
     {
-        return Intl::getCurrencyBundle()->getCurrencyName($money->getCurrency()->getCurrencyCode());
+        return Intl::getCurrencyBundle()->getCurrencyName($money->getCurrency()->getCode());
     }
 }
