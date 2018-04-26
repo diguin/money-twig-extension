@@ -1,6 +1,6 @@
 <?php
 
-namespace Ivoba\Test\Money\Twig;
+namespace Ivoba\Money\Test\Twig;
 
 use Ivoba\Money\Formatter\MoneyFormatter;
 use Ivoba\Money\Twig\MoneyExtension;

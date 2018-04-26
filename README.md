@@ -1,6 +1,6 @@
 # money-twig-extension
 
-Twig Extension for [Money](https://github.com/sebastianbergmann/money) value object
+Twig Extension for [Money](https://github.com/moneyphp/money) value object
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)

@@ -4,7 +4,7 @@
 {{ money|money_i18n_format('de_DE') }}-{{ money|money_i18n_format('en_US') }}-{{ money|money_currency_symbol('en_US') }}-{{ money|money_currency_name('en_US') }}
 --DATA--
 return array(
-'money' => SebastianBergmann\Money\Money::fromString('1123.45', 'EUR')
+'money' => Money\Money::EUR(112345)
 )
 --EXPECT--
 1.123,45 €-€1,123.45-€-Euro

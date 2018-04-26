@@ -1,6 +1,6 @@
 {
     "name": "ivoba/money-twig-extension",
-    "description": "Twig extension for sebastian/money",
+    "description": "Twig extension for moneyphp/money",
     "keywords": [
         "twig",
         "money"
@@ -15,10 +15,10 @@
         }
     ],
     "require": {
-        "php" : ">=5.4",
-        "sebastian/money" : "~1.6",
-        "twig/twig": "~1.20|~2.0",
-        "symfony/intl": ">=2.3"
+        "php" : ">=5.6",
+        "moneyphp/money": "^3.1",
+        "symfony/intl": ">=2.3",
+        "twig/twig": "~1.20|~2.0"
     },
     "require-dev": {
         "phpunit/phpunit" : "4.*",
