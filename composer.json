@@ -1,5 +1,5 @@
 {
-    "name": "ivoba/money-twig-extension",
+    "name": "diguin/money-twig-extension",
     "description": "Twig extension for moneyphp/money",
     "keywords": [
         "twig",
