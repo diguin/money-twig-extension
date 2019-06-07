@@ -32,15 +32,17 @@ class MoneyFormatter
      *
      * @param Money $money
      * @param null  $locale
+     * @param int $minFractionDigits
      * @return bool|string
      */
-    public function formatI18nDecimal(Money $money, $locale = null)
+    public function formatI18nDecimal(Money $money, $locale = null, $minFractionDigits = 0)
     {
         if ($locale === null) {
             $locale = $this->locale;
         }
 
         $numberFormatter = new \NumberFormatter($locale, \NumberFormatter::DECIMAL);
+        $numberFormatter->setAttribute(\NumberFormatter::MIN_FRACTION_DIGITS,$minFractionDigits);
         $moneyFormatter = new IntlMoneyFormatter($numberFormatter, new ISOCurrencies());
 
         return $moneyFormatter->format($money);
